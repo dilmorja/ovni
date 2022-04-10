@@ -6,7 +6,6 @@ package utils
 import(
 	"path/filepath"
 	"runtime"
-	"os"
 	"fmt"
 )
 
@@ -35,7 +34,7 @@ func GenHTML(opt *HTMLOptions) string {
 	}(opt.WASMP), func(path string) string {
 		if path == "" {
 			// ovni go instance initializer
-			return filepath.Join(os.Getenv("OVNI_GOII"))
+			return "main.wasm"
 		}
 		return path
 	}(opt.GOII))
